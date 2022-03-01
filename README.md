@@ -15,5 +15,5 @@ ____
 
 ### Дополнительные ссылки
     визуальная онлайн-доска на платформе Miro.com
-    [Jira](https://ainterestingplace.atlassian.net/jira/software/projects/IP/boards/1)
-    [Miro](https://miro.com/app/board/uXjVOIr4Qys=/)
+    [Jira] (https://ainterestingplace.atlassian.net/jira/software/projects/IP/boards/1)
+    [Miro] (https://miro.com/app/board/uXjVOIr4Qys=/)
