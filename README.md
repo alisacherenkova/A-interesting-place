@@ -14,5 +14,5 @@ ____
 ____
 
 ### Дополнительные ссылки
-- Jira  https://ainterestingplace.atlassian.net/jira/software/projects/IP/boards/1
+- Trello  https://trello.com/b/CPmaMqk5/a-interesting-place
 - Miro  https://miro.com/app/board/uXjVOIr4Qys=/
