@@ -8,11 +8,11 @@ ____
 ____
 
 ### Участники проекта 
-    Черенкова Алиса (Руководитель группы, Аналитик)
-    Евтухов Виталий (Разработчик)
-    Шамылов Максатмырат (Тестировщик)
+    Черенкова Алиса (Руководитель группы, Аналитик) https://vk.com/alisa_cherenkova
+    Евтухов Виталий (Разработчик) https://vk.com/poshlibuhats
+    Шамылов Максатмырат (Тестировщик) https://vk.com/id603048154
 ____
 
 ### Дополнительные ссылки
 - Trello  https://trello.com/b/CPmaMqk5/a-interesting-place
-- Miro  https://miro.com/app/board/uXjVOIr4Qys=/
+- Miro  https://miro.com/app/board/uXjVOEtzSuo=/
