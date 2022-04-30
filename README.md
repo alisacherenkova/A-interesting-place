@@ -17,5 +17,6 @@ ____
 - Trello  https://trello.com/b/CPmaMqk5/a-interesting-place
 - Miro  https://miro.com/app/board/uXjVOIr4Qys=/?invite_link_id=211912593173
 - [Техническое задание.docx](https://github.com/alisacherenkova/A-interesting-place/files/8311426/default.docx)
-- [Курсовой проект.docx](https://github.com/alisacherenkova/A-interesting-place/files/8311442/default.docx)
+- [Курсовой проект.docx](https://github.com/alisacherenkova/A-interesting-place/files/8597105/default.docx)
+
 
