@@ -19,6 +19,10 @@ def index():
                                              primary_length_unit='miles')
 
     all_subgroups = folium.FeatureGroup(name='Хорошее место')
+    group1 = plugins.FeatureGroupSubGroup(all_subgroups, 'Организации')
+    group2 = plugins.FeatureGroupSubGroup(all_subgroups, 'Кафе')
+    m.add_child(group1)
+    m.add_child(group2)
     m.add_child(all_subgroups)
 
     tooltip = 'ВГУ'
@@ -28,15 +32,16 @@ def index():
     tooltip_5 = 'Сулико'
 
     folium.Marker([51.656859, 39.205926], popup=('<a href="http://www.vsu.ru/"> Link </a>'), tooltip=tooltip,
-                  icon=folium.Icon(color="red")).add_to(m)
+                  icon=folium.Icon(color="red")).add_to(group1)
     folium.Marker([51.666888, 39.205913], popup=('<a href="https://oscarbeef.business.site/"> Link </a>'),
-                  tooltip=tooltip_2, icon=folium.Icon(color="red")).add_to(m)
+                  tooltip=tooltip_2, icon=folium.Icon(color="red")).add_to(group2)
     folium.Marker([51.674031, 39.208084], popup=('<a href="https://bigapizza.ru/"> Link </a>'), tooltip=tooltip_3,
-                  icon=folium.Icon(color="red")).add_to(m)
+                  icon=folium.Icon(color="red")).add_to(group2)
     folium.Marker([51.668914, 39.198823], popup=('<a href="https://chaihona.ru/vrg/> Link </a>'), tooltip=tooltip_4,
-                  icon=folium.Icon(color="red")).add_to(m)
-    folium.Marker([51.658568, 39.204931], popup=('<a href="https://suliko-belucci.ru/> Link </a>'), tooltip=tooltip_5,
-                  icon=folium.Icon(color="red")).add_to(m)
+                  icon=folium.Icon(color="red")).add_to(group2)
+    folium.Marker([51.658568, 39.204931], popup=('<a href="https://suliko-belucci.ru/> Link </a>'),
+                  tooltip=tooltip_5,
+                  icon=folium.Icon(color="red")).add_to(group2)
 
     draw.add_to(m)
     folium.LayerControl().add_to(m)
