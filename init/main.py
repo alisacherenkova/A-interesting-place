@@ -1,9 +1,28 @@
 import folium
 from folium import plugins
-from flask import Flask
+from flask import Flask, request, render_template, session, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'cb02820a3e94d72c9f950ee10ef7e3f7a35b3f5b'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///questionnaire.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
+class Place(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    xCoor = db.Column(db.Float, nullable=False)
+    yCoor = db.Column(db.Float, nullable=False)
+    group = db.Column(db.Integer, nullable=False)
+    popup = db.Column(db.String(100), nullable=False)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    password = db.Column(db.String(100), nullable=False)
+    admin = db.Column(db.Boolean, default=False)
 
 @app.route('/')
 def index():
@@ -49,6 +68,58 @@ def index():
     #    m.add_child(folium.LatLngPopup()) Под вопросом, иногда мешается
     m.save('name.html')
     return m._repr_html_()
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    current_user = get_params_user()
+    if request.method == 'POST':
+        name = request.form['name']
+        password = request.form['password']
+
+        user = User.query.filter(User.name == name).first()
+
+        if user is not None:
+            return render_template('register.html', message="Пользователь уже существует", **current_user)
+
+        admin = False
+        if 'admin' in request.form:
+            admin = True
+
+        user = User(name=name, password=password, admin=admin)
+
+        try:
+            db.session.add(user)
+            db.session.commit()
+            session['user_id'] = user.id
+            return redirect(url_for('index'))
+        except:
+            return render_template('register.html', message="Неправильный ввод", **current_user)
+    return render_template('register.html', **current_user)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    current_user = get_params_user()
+    if request.method == 'POST':
+        name = request.form['name']
+        password = request.form['password']
+        user = User.query.filter(User.name == name).first()
+
+        if user is None or user.password != password:
+            return render_template('login.html', message="Неверные данные", **current_user)
+        else:
+            session['user_id'] = user.id
+            return redirect(url_for('index'))
+    return render_template('login.html', **current_user)
+
+def get_params_user():
+    name = None
+    admin = False
+    if 'user_id' in session:
+        user = User.query.get(session['user_id'])
+        name = user.name
+        admin = user.admin
+    return dict(name=name, admin=admin)
 
 
 # 51.656859, 39.205926
