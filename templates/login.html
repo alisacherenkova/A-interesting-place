@@ -3,9 +3,23 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<form action="" method="post">
-    <p>Имя пользователя<input type="text" name="name"></p>
-    <p>Пароль<input type="password" name="password"></p>
-    <input type="submit" value="Войти">
-</form>
+<div class="container">
+    <main class="form-signin">
+        <form method="post">
+            <h1 class="h3 mb-3 fw-normal">Войдите</h1>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Введите имя" name="name">
+                <label for="floatingInput">Введите имя</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Введите пароль"
+                       name="password">
+                <label for="floatingPassword">Введите пароль</label>
+            </div>
+            <br>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+        </form>
+    </main>
+</div>
 </body>
