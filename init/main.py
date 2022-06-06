@@ -3,7 +3,7 @@ from folium import plugins
 from flask import Flask, request, render_template, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from Connection import Error, get_db, close_db
-from model import User, Place
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'cb02820a3e94d72c9f950ee10ef7e3f7a35b3f5b'
@@ -11,6 +11,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///questionnaire.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+class Place(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    xCoor = db.Column(db.Float, nullable=False)
+    yCoor = db.Column(db.Float, nullable=False)
+    group = db.Column(db.Integer, nullable=False)
+    popup = db.Column(db.String(100), nullable=False)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    password = db.Column(db.String(100), nullable=False)
+    admin = db.Column(db.Boolean, default=False)
 
 @app.route('/')
 def index():
