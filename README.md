@@ -23,4 +23,4 @@ ____
 - [Техническое задание.docx](https://github.com/alisacherenkova/A-interesting-place/files/8857217/default.docx)
 - [Техническое задание.pdf](https://github.com/alisacherenkova/A-interesting-place/files/8857218/default.pdf)
 - [Видео-презентация](https://disk.yandex.ru/i/WnYS4GcLOzxmzA)
-- [Видео развёрткаъ](https://disk.yandex.ru/i/znV0Nzk4iVYAJw)
+- [Видео развёртка](https://disk.yandex.ru/i/znV0Nzk4iVYAJw)
