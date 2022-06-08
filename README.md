@@ -22,3 +22,4 @@ ____
 - [Презентация.pptx](https://github.com/alisacherenkova/A-interesting-place/files/8857215/default.pptx)
 - [Техническое задание.docx](https://github.com/alisacherenkova/A-interesting-place/files/8857217/default.docx)
 - [Техническое задание.pdf](https://github.com/alisacherenkova/A-interesting-place/files/8857218/default.pdf)
+- [Презентация](https://disk.yandex.ru/i/WnYS4GcLOzxmzA)
